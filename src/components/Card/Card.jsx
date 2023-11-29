@@ -1,4 +1,5 @@
-
+import { TextLimit } from "../TextLimit/TextLimit"
+import { CardBody, CardContainer, CardFooter } from "./CardStyled"
 
 export function Card( props ) {
     console.log(props)
@@ -9,18 +10,23 @@ export function Card( props ) {
                     <h2>{props.titulo}</h2>
                     <img src={props.banner} alt="Imagem" />
                 </div>
-                <TextLimit text={props.text} limit={150} />
+                <TextLimit text={props.descricao} limit={150} />
             </CardBody>
 
             <CardFooter>
                 <div>
                     <i className="bi bi-hand-thumbs-up"></i>
-                    <span>{props.likes}</span>
+                    <span>{props.status}</span>
                 </div>
 
                 <div>
                     <i className="bi bi-chat"></i>
-                    <span>{props.comments}</span>
+                    <span>{props.data_criacao}</span>
+                </div>
+
+                <div>
+                    <i className="bi bi-hand-thumbs-up"></i>
+                    <span>{props.data_limite}</span>
                 </div>
 
             </CardFooter>
