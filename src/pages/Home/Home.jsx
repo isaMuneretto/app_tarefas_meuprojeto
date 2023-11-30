@@ -15,7 +15,7 @@ export default function Home() {
 
     async function findAllTarefas() { //essa função utiliza o Service para trazer os posts
         const response = await getAllTarefas();
-        setTarefa(response.data.results); //atualiza um estado e renderiza na tela
+        setTarefa(response.data.tarefas); //atualiza um estado e renderiza na tela
     }
 
     //findAllNews(); qnd renderizar,essa função vai chamar o axios e vai trazer os posts aqui só que está na raiz e vai criar um loop
@@ -23,22 +23,22 @@ export default function Home() {
     //é quem ele precisa monitorar para que o efeito seja dado na tela
     useEffect(() => {
         findAllTarefas();
-    }, [tarefa])
+    }, [])
 
     return ( //o return so pode retornar uma tag entao tem que envolver em uma section ou qlqr outra tag, div, etc no caso usei uma Fragment (tag sem nome) 
         <> {/*Fragment é uma tag vazia não precisa ter nome*/}
             <Navbar />
             <HomeBody>
-                {tarefa.map((item) => {
+                {tarefa.map((item) => (
                     <Card
                         key={item.id}
-                        titulo={item.titulo} 
+                        titulo={item.titulo}
                         descricao={item.descricao}
-                        status={item.status}    
+                        status={item.status}
                         data_criacao={item.data_criacao}
                         data_limite={item.data_limite}
                     />
-                })}
+                ))}
             </HomeBody>
 
         </>

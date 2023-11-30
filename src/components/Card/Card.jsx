@@ -8,9 +8,8 @@ export function Card( props ) {
             <CardBody> {/*tag article */}
                 <div>
                     <h2>{props.titulo}</h2>
-                    <img src={props.banner} alt="Imagem" />
                 </div>
-                <TextLimit text={props.descricao} limit={150} />
+                <TextLimit descricao={props.descricao} limit={150} />
             </CardBody>
 
             <CardFooter>
