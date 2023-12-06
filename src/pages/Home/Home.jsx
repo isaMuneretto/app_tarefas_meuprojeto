@@ -3,19 +3,22 @@
 //aqui vai chamar os componentes (card, footer e navbar)
 
 import { useEffect, useState } from "react";
+
 import { Card } from "../../components/Card/Card.jsx";
-import { Navbar } from "../../components/Navbar/Navbar";
-/* import { news } from '../../Datas.js'  *///buscar o conteudo mocado (ficticio) no Datas
 import { getAllTarefas } from "../../services/taskServices.js";
 import { HomeBody } from "./HomeStyled.jsx";
 
 export default function Home() {
 
     const [tarefa, setTarefa] = useState([]); //array desestruturado, variavel news inicializa con array vazio. setNews altera o estado de array vazio para array com alguma coisa
+    //const [topTarefa, setTopTarefa] = useState({});
 
     async function findAllTarefas() { //essa função utiliza o Service para trazer os posts
-        const response = await getAllTarefas();
-        setTarefa(response.data.tarefas); //atualiza um estado e renderiza na tela
+        const tarefaResponse = await getAllTarefas();
+        setTarefa(tarefaResponse.data.tarefas); //atualiza um estado e renderiza na tela
+    
+        /* const topTarefaResonse = await getTopTarefas();
+        setTopTarefa(topTarefaResonse.data.tarefas); */
     }
 
     //findAllNews(); qnd renderizar,essa função vai chamar o axios e vai trazer os posts aqui só que está na raiz e vai criar um loop
@@ -27,7 +30,7 @@ export default function Home() {
 
     return ( //o return so pode retornar uma tag entao tem que envolver em uma section ou qlqr outra tag, div, etc no caso usei uma Fragment (tag sem nome) 
         <> {/*Fragment é uma tag vazia não precisa ter nome*/}
-            <Navbar />
+        
             <HomeBody>
                 {tarefa.map((item) => (
                     <Card
