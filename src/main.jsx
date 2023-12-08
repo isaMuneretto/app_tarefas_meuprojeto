@@ -5,7 +5,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Navbar } from './components/Navbar/Navbar';
 import { Search } from './pages/Search/Search';
 import { GlobalStyled } from './GlobalStyled.jsx';
-import ErrorPage from './pages/ErrorPage/ErrorPage.jsx';
+import  ErrorPage  from './pages/ErrorPage/ErrorPage.jsx';
+import { Authentication } from './pages/Authentication/Authentication.jsx';
 
 //a router vai chamar as rotas atraves de um array de objetos
 const router = createBrowserRouter([
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
         element: <Search />,
       }
     ]
-  }
+  },
+ {
+    path: "/auth", //o login eu não quero que apareça a navbar então eu saí da rota mae
+    element: <Authentication />,
+  } 
 ])
 
 //para renderizar a <App/> tem que ser com routerProvider

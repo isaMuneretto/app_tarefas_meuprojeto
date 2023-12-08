@@ -8,7 +8,7 @@ export const Nav = styled.nav`
   padding: 1rem 0;
     /* position: fixed;
     top: 0; */
-  background-color: #F2F2F2;
+  background-color: #006494;
   z-index: 1;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 `;
@@ -34,7 +34,7 @@ export const InputSpace = styled.div`
     z-index: 10;
     border: none;
     background-color:  #f5f5f5;
-    color: #757575;
+    color: #247BA0;
     border-radius: 0.3rem;
     padding: 0.5rem;
     cursor: pointer;
@@ -50,7 +50,7 @@ export const InputSpace = styled.div`
     outline: none;
     font-size: 0.9rem;
     padding: 0.6rem;
-    background-color: #E6E0F8;
+    background-color: #E8F1F2;
     border: none;
     width: 100%;
     border-radius: 0.3rem;
@@ -63,12 +63,12 @@ export const InputSpace = styled.div`
 
 export const Button = styled.button`
   //se quiser usar esse estilo em outro lugar é só exportar
-  background-color: #5f5aca;
+  background-color: #247BA0;
   border: none;
   outline: none;
   font-size: 1rem;
   padding: 0.4rem 1rem;
-  color: #fff;
+  color: #247BA0;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   border-radius: 0.3rem;
@@ -85,3 +85,13 @@ export const Button = styled.button`
     background-color: #0a86af;
   }
 `;
+
+export const ErrorSpan = styled.span`
+  background-color: #ffaeae;
+  color: #9e0000;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+`
