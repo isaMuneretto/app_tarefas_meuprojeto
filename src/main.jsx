@@ -22,7 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/search/:titulo",
         element: <Search />,
-      }
+      },
+      {
+        path: "/main",
+        element: <Maintenance />,
+      },
     ]
   },
  {

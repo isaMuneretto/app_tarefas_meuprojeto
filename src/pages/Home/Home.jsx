@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/Card.jsx";
 import { getAllTarefas } from "../../services/taskServices.js";
 import { HomeBody } from "./HomeStyled.jsx";
+import Cookies from "js-cookie";
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
     //é quem ele precisa monitorar para que o efeito seja dado na tela
     useEffect(() => {
         findAllTarefas();
+        console.log(Cookies.get("token"));
     }, [])
 
     return ( //o return so pode retornar uma tag entao tem que envolver em uma section ou qlqr outra tag, div, etc no caso usei uma Fragment (tag sem nome) 
