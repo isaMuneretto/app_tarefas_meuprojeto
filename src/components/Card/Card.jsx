@@ -1,5 +1,5 @@
 import { TextLimit } from "../TextLimit/TextLimit"
-import { CardBody, CardContainer, CardFooter, CardHeader } from "./CardStyled"
+import { AlterarButton, CardBody, CardButton, CardContainer, CardFooter, CardHeader, ExcluirButton } from "./CardStyled"
 
 export function Card(props) {
     console.log(props)
@@ -11,6 +11,15 @@ export function Card(props) {
                         <h2>{props.titulo}</h2>
                         <TextLimit descricao={props.descricao} limit={150} />
                     </CardHeader>
+
+                    <CardButton>
+                        <section>
+                        <i class="bi bi-arrow-clockwise"></i>
+                        </section>
+                        <AlterarButton onClick={props.alterarClick}>Alterar</AlterarButton>
+                        <ExcluirButton onClick={props.excluirClick}>Excluir</ExcluirButton>
+
+                    </CardButton>
 
                     <CardFooter>
                         <section>

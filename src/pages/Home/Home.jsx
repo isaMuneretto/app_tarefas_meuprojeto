@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { Card } from "../../components/Card/Card.jsx";
 import { getAllTarefas } from "../../services/taskServices.js";
 import { HomeBody } from "./HomeStyled.jsx";
-import Cookies from "js-cookie";
 
 export default function Home() {
 
@@ -22,12 +21,8 @@ export default function Home() {
         setTopTarefa(topTarefaResonse.data.tarefas); */
     }
 
-    //findAllNews(); qnd renderizar,essa função vai chamar o axios e vai trazer os posts aqui só que está na raiz e vai criar um loop
-    //abaixo função de callback (o que vai acontecer qnd useEffect for acionado) e array de dependencias 
-    //é quem ele precisa monitorar para que o efeito seja dado na tela
     useEffect(() => {
         findAllTarefas();
-        console.log(Cookies.get("token"));
     }, [])
 
     return ( //o return so pode retornar uma tag entao tem que envolver em uma section ou qlqr outra tag, div, etc no caso usei uma Fragment (tag sem nome) 

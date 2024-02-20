@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Navbar } from './components/Navbar/Navbar';
 import { Search } from './pages/Search/Search';
+import  Maintenance  from './pages/Maintenance/Maintenance.jsx'
 import { GlobalStyled } from './GlobalStyled.jsx';
 import  ErrorPage  from './pages/ErrorPage/ErrorPage.jsx';
 import { Authentication } from './pages/Authentication/Authentication.jsx';

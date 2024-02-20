@@ -18,6 +18,8 @@ export const ButtonSpace = styled.button`
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   transition: border-color 0.3s;
+  margin: 0 auto;
+  display: block;
 
   :hover {
     //o hover é como uma herança

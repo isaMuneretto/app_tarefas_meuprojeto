@@ -7,7 +7,7 @@ import { signinSchema } from "../../schemas/signinSchema";
 import { signupSchema } from "../../schemas/signupSchema";
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
 import { signin, signup } from "../../services/userServices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 export function Authentication() {
@@ -29,7 +29,7 @@ export function Authentication() {
         try {
             const response = await signin(data);
             Cookies.set("token", response.data, { expires: 1 });
-            navigate("/")
+            navigate("/main")
             console.log(response);
         } catch (error) {
             console.log(error)
@@ -41,8 +41,8 @@ export function Authentication() {
     async function upHandleSubmit(data) {
         try {
             const response = await signup(data);
-            Cookies.set("token", response.data.token, { expires: 1 });
-            navigate("/")
+            Cookies.set("token", response.data, { expires: 1 });
+            navigate("/main")
             console.log(response);
         } catch (error) {
             console.log(error)

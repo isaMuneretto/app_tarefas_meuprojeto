@@ -4,5 +4,5 @@ export const signinSchema = z.object({ //zod é uma biblioteca de validação ba
     email: z.string().email({ message: "E-mail inválido" }).toLowerCase(),
         senha: z
         .string()
-        .min(6, { message: "A senha deve ter no minimo 6 caracteres" }), //esse refine é um regex, os caracteres indicam espaço vazio, se negar não pode ter só espaço
+        .min(3, { message: "A senha deve ter no minimo 3 caracteres" }), //esse refine é um regex, os caracteres indicam espaço vazio, se negar não pode ter só espaço
 });

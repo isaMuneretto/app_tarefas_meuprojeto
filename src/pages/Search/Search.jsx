@@ -12,7 +12,7 @@ export function Search() {
     async function search() {
         try {
             const tarefaApi = await searchTarefa(titulo);
-            setTarefa(tarefaApi.data.tarefas);
+            setTarefa(tarefaApi.data);
             console.log(tarefa)
         } catch (err) {
             console.log(err);
